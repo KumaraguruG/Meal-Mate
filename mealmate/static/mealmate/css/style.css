@@ -1,0 +1,130 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif; /* Standard font */
+    margin: 0;
+    padding: 0;
+    background-color: #F7E4E0; /* Light background color */
+    color: #333; /* Neutral text color for good readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align all content */
+    justify-content: center;
+    min-height: 100vh; /* Full height */
+}
+
+/* Headings */
+h1, h2, h3 {
+    text-align: center;
+    color: #8BA6E9; /* Primary blue shade */
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #7E96C4; /* Secondary blue shade */
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #8BA6E9; /* Lighter blue on hover */
+}
+
+/* Buttons */
+button {
+    background-color: #8BA6E9; /* Button background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7E96C4; /* Slightly darker shade on hover */
+}
+
+/* Forms */
+form {
+    background-color: white;
+    border: 2px solid #D7B7BC; /* Light border */
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin: 20px auto;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #D7B7BC; /* Subtle border */
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    border: 2px solid #D7B7BC; /* Subtle border */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: left;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #D7B7BC; /* Subtle cell border */
+}
+
+th {
+    background-color: #BED0F4; /* Table header color */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #F7E4E0; /* Alternate row color */
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Center alignment for specific elements */
+h1, h2, h3, table, form {
+    margin: 0 auto;
+}
+
+/* Additional spacing for elements */
+a, button {
+    margin: 10px;
+}

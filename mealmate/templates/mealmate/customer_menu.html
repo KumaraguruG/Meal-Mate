@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mealmate/css/styles.css' %}">
+    <title>{{ restaurant.name }} - Menu</title>
+</head>
+<body>   
+    <h2>Welcome {{username}}</h2>
+
+    <a href="{% url 'show_cart_page' username %}">🛒 View cart</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Veg/Non-Veg</th>
+                <th>Operation<th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in menu_items %}
+            <tr>
+                <td>
+                    {% if item.picture %}
+                    <img src="{{ item.picture.url }}" alt="{{ item.name }}" width="100">
+                    {% else %}
+                       No Image
+                    {% endif %}
+                </td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.price }}</td>
+                <td>
+                    {% if item.is_veg %}
+                        Veg
+                    {% else %}
+                        Non-Veg
+                    {% endif %}
+                </td> 
+                <td>
+                    <form method="POST" action="{% url 'add_to_cart' item.id username %}">
+                        {% csrf_token %}
+                        <button type="submit" onclick="return confirm('Are you sure you want to add to cart?')">Add to cart</button>
+                    </form>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No menu items available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
